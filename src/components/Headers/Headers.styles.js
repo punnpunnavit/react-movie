@@ -1,8 +1,16 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background: var(--darkGrey);
+  // background: var(--darkGrey);
   padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background-color: ${(props) =>
+    props.show ? "var(--darkGrey)" : "rgba(28, 28, 28,0.025)"};
+  transition-timing-function: ease-out;
+  //background-color: rgba(28, 28, 28,0.3);
+  transition: 0.5s;
 `;
 
 export const Content = styled.div`

@@ -8,7 +8,7 @@ import { GlobalStyle } from "./GlobalStyle";
 const App = () => {
   return (
     <div className="App">
-      <Header/>
+      {/* <Header/> */}
       <Home/>
       <GlobalStyle />
     </div>

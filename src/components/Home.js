@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 // Config
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config";
@@ -6,6 +6,10 @@ import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config";
 import HeroImage from "./HeroImage";
 import Grid from "./Grid";
 import Thumb from "./Thumb";
+import Spinner from "./Spinner";
+import SearchBar from "./SearchBar"
+import Footer from "./Footer"
+//Hooks
 import { useHomeFetch } from "../hooks/useHomeFetch";
 //Image
 import NoImage from "../images/no_image.jpg";
@@ -27,7 +31,8 @@ const Home = () => {
           text={state.results[0].overview}
         />
       )}
-      <Grid header="Popular Movies">
+      <SearchBar/>
+      <Grid header="Our Top Picks">
         {state.results.map((movie) => (
           <Thumb
             key={movie.id}
@@ -41,6 +46,8 @@ const Home = () => {
           />
         ))}
       </Grid>
+      <Spinner />
+      <Footer/>
     </>
   );
 };
